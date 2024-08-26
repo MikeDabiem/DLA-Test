@@ -1,0 +1,169 @@
+.first-block {
+  position: relative;
+  height: 100vh;
+  min-height: 755px;
+  padding-top: 250px;
+  background: var(--blue);
+  overflow: hidden;
+
+  &__stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url(img/stars.png) 50% 20% / 90% no-repeat;
+    animation: flicker .2s infinite;
+  }
+
+  @keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .8;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    padding-left: 70px;
+  }
+
+  .main {
+    &-title {
+      font-size: clamp(52px, 5vw, 72px);
+    }
+
+    &-subtitle {
+      margin-top: 20px;
+      font-size: clamp(28px, 2.6vw, 38px);
+    }
+
+    &-button {
+      display: block;
+      margin-top: 27px;
+      padding: 12px 40px;
+      background: transparent;
+      border: 1px solid var(--white);
+      border-radius: 20px 20px 20px 0;
+      font-family: $roboto;
+      font-size: 16px;
+      cursor: pointer;
+
+      &:hover {
+        background: var(--white);
+        color: var(--blue);
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    left: 70px;
+    bottom: 51px;
+    z-index: 5;
+    background: none;
+    border: none;
+    cursor: pointer;
+    animation: fly-arrow 1s infinite alternate;
+  }
+
+  @keyframes fly-arrow {
+    from {
+      transform: translateY(-5px);
+    }
+    to {
+      transform: translateY(5px);
+    }
+  }
+
+  .santa {
+    position: absolute;
+    bottom: 0;
+    right: -5%;
+    z-index: -1;
+    width: clamp(450px, 100%, 883px);
+    height: 75vh;
+
+    &__image {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      img {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &__cloud {
+      position: absolute;
+      bottom: 25%;
+      right: 65%;
+      max-width: 275px;
+      padding: 8% 8% 8% 4%;
+      font-size: clamp(14px, 1.5vw, 18px);
+      line-height: 1.15;
+      color: var(--black);
+      background: url('img/cloud.png') 0 0 / 100% 100% no-repeat;
+      opacity: 0;
+    }
+  }
+
+  &.fp-is-overflow>.fp-overflow {
+    height: 100%;
+    overflow-y: visible;
+  }
+
+  @media screen and (max-width: 900px) {
+    .santa__cloud {
+      bottom: 15vw;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__stars {
+      background-size: cover;
+    }
+    &__inner {
+      padding-left: 27px;
+    }
+    &__arrow {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    &.fp-table {
+      justify-content: start;
+      padding-top: 220px;
+    }
+    .main-button {
+      margin: 27px auto 0;
+    }
+    .santa {
+      position: static;
+      width: calc(100% + 54px);
+      height: auto;
+      margin: 0 -27px;
+      &__image {
+        margin-top: 77px;
+        padding-top: 70%;
+      }
+      &__cloud {
+        display: none;
+      }
+    }
+  }
+}

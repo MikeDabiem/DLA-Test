@@ -1,0 +1,141 @@
+:root {
+  --black: #000;
+  --white: #fff;
+  --blue: #141429;
+  --red: #D02B2B;
+  --grey: #CECECE;
+}
+
+@font-face {
+  font-family: 'Risque';
+  src: url('fonts/Risque-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+$risque: 'Risque', 'Roboto', sans-serif;
+$roboto: 'Roboto', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Risque', 'Roboto', sans-serif;
+  color: var(--white);
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+}
+
+.wrapper {
+  max-width: 1334px;
+  margin: 0 auto;
+  padding: 0 27px;
+}
+
+.img-wrapper {
+  position: relative;
+
+  img,
+  picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.transition {
+  transition: all .4s ease-in-out;
+  &::before,
+  &::after {
+    transition: all .4s ease-in-out;
+  }
+}
+
+.snowflake {
+  position: absolute;
+  top: 40vh;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  animation: snowflake 60s infinite linear;
+  z-index: 2;
+  transition: top .6s ease;
+  pointer-events: none;
+
+  &.move {
+    top: 80vh;
+  }
+}
+
+@keyframes snowflake {
+  from {
+    transform: translateX(clamp(-924px, -64vw, -480px)) rotate(0deg);
+  }
+  to {
+    transform: translateX(clamp(-924px, -64vw, -480px)) rotate(-360deg);
+  }
+}
+
+.snowfall {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+
+  &__snow {
+    width: 100%;
+    height: 100%;
+    background: url('img/snow-bg.png') 0 0 / contain repeat;
+    animation: snowfall 20s infinite linear;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('img/snow-bg.png') 0 0 / contain repeat;
+    }
+  }
+
+}
+
+@keyframes snowfall {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@import "header";
+@import "first-block";
+@import "second-block";
+@import "third-block";
+
+@media screen and (max-width: 768px) {
+  .snowflake {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .snowfall,
+  .snowfall__snow::after {
+    height: 100%;
+  }
+}

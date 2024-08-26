@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CocaCola</title>
+
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/fullpage.min.css">
+    <script src="src/js/fullpage.min.js"></script>
+    <script src="src/script.js"></script>
+</head>
+<body>
+<header class="header">
+    <div class="header__inner">
+        <a href="#" class="header__logo img-wrapper">
+            <img src="src/img/coca-cola_logo.png" alt="Coca-Cola">
+        </a>
+        <nav class="header__menu">
+            <a href="#" class="menu__item" data-text="Main">Main</a>
+            <a href="#" class="menu__item" data-text="About">About</a>
+            <a href="#" class="menu__item" data-text="Products">Products</a>
+            <a href="#" class="menu__item" data-text="Contacts">Contacts</a>
+        </nav>
+        <button class="burger-button" aria-label="Menu">
+            <span class="burger-button-line transition"></span>
+        </button>
+    </div>
+    <div class="burger-menu transition hide">
+        <nav class="burger-menu__items">
+            <a href="#" class="burger-menu__item transition">Home</a>
+            <a href="#" class="burger-menu__item transition">About</a>
+            <a href="#" class="burger-menu__item transition">Products</a>
+            <a href="#" class="burger-menu__item transition">Contacts</a>
+        </nav>
+    </div>
+</header>
+<div id="page">
+    <div class="snowflake img-wrapper">
+        <img src="src/img/snow.png" alt="snowflake">
+    </div>
+    <div class="first-block section">
+        <div class="snowfall">
+            <div class="snowfall__snow"></div>
+        </div>
+        <div class="first-block__stars"></div>
+        <div class="first-block__inner wrapper">
+            <h1 class="main-title">Main Site Title</h1>
+            <div class="main-subtitle">Lorem ipsum descripsum</div>
+            <button type="button" class="main-button transition">Call to action</button>
+            <div class="santa">
+                <picture class="santa__image">
+                    <source srcset="src/img/dedcoca-mob.png" media="(max-width: 480px)">
+                    <img src="src/img/dedcoca.png" alt="Santa">
+                </picture>
+                <p class="santa__cloud transition">
+                    How how how !!!<br>
+                    Like it?<br>
+                    Scroll down for more !
+                </p>
+            </div>
+            <button type="button" class="first-block__arrow">
+                <img src="src/img/arrow.png" alt="next">
+            </button>
+        </div>
+    </div>
+    <div class="second-block section">
+        <div class="snowfall">
+            <div class="snowfall__snow"></div>
+        </div>
+        <div class="second-block__inner wrapper">
+            <div class="second-block__col1">
+                <h2 class="second-block__title">At least somewhere you can feel new year atmosphere</h2>
+                <div class="second-block__present">
+                    <h4 class="present__title">Choose your present:</h4>
+                    <div class="present__items">
+                        <button
+                                class="present__item img-wrapper transition active"
+                                data-title="Best sock ever"
+                                data-text="Reuglar sock have no present inside Lorem Ipsum is simply dumm y text of the printing and types etting industry. Lorem"
+                        >
+                            <img src="src/img/new-year-sock-big.png" alt="present">
+                        </button>
+                        <button class="present__item img-wrapper transition"
+                                data-title="Best hat ever"
+                                data-text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                        >
+                            <img src="src/img/caps-2.png" alt="present">
+                        </button>
+                        <button class="present__item img-wrapper transition"
+                                data-title="Best bag ever"
+                                data-text="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                        >
+                            <img src="src/img/new-year-bag.png" alt="present">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="second-block__col2 second-block__info transition">
+                <div class="info__descr">
+                    <h3 class="info__title">Best sock ever</h3>
+                    <p class="info__text">Reuglar sock have no present inside Lorem Ipsum is simply dumm y text of the
+                        printing and types etting industry. Lorem</p>
+                </div>
+                <div class="info__image img-wrapper">
+                    <img src="src/img/new-year-sock-big.png" alt="present">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="third-block section">
+        <div class="snowfall">
+            <div class="snowfall__snow"></div>
+        </div>
+        <div class="third-block__inner wrapper">
+            <h2 class="third-block__title">Write us<br>for real presents</h2>
+            <form class="feedback-form">
+                <div class="feedback-form__item">
+                    <input type="text" name="name" id="name" class="transition" placeholder="Name">
+                </div>
+                <div class="feedback-form__item">
+                    <input type="text" name="phone" id="phone" class="transition" placeholder="Phone">
+                </div>
+                <div class="feedback-form__item">
+                    <input type="hidden" name="gender" id="gender">
+                    <div class="gender-select" tabindex="-1">
+                        <div class="gender-select__trigger" tabindex="0" role="button" aria-haspopup="listbox">
+                            <p>Gender</p>
+                            <div class="arrow transition"></div>
+                        </div>
+                        <div class="gender-select__drop" role="listbox" tabindex="-1">
+                            <div class="gender-select__options" tabindex="-1">
+                                <p class="gender-select__option transition" role="option" tabindex="0" data-value="Boy">Boy</p>
+                                <p class="gender-select__option transition" role="option" tabindex="0" data-value="Girl">Girl</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-form__item">
+                    <input type="email" name="email" id="email" class="transition" placeholder="Email">
+                </div>
+                <div class="feedback-form__item feedback-form__wish">
+                    <textarea name="wish" id="wish" class="transition" placeholder="Your wish" rows="3"></textarea>
+                </div>
+                <div class="feedback-form__item feedback-form__checkbox">
+                    <input type="checkbox" name="present" id="present">
+                    <label for="present" class="checkbox-custom transition" tabindex="0"></label>
+                    <label for="present" class="checkbox-text">Want Coca-cola with present ?</label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
